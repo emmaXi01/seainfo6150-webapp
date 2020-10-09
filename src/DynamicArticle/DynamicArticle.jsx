@@ -4,7 +4,6 @@ import HTMLText from "../HTMLText/HTMLText";
 const DynamicArticle = (props) => {
   return (
     <article>
-      {/* this is an example of how you insert props into a react component */} 
       <header>
         <h1>{props.article.title}</h1>
         <address>
@@ -12,7 +11,7 @@ const DynamicArticle = (props) => {
   <a href="mailto:kate.farley@nytimes.com">{props.article.authorEmail}</a>)
           <br />
         </address>
-        <time datetime={props.articletimeStamp}>{props.article.displayDate}</time>
+        <time datetime={props.article.timeStamp}>{props.article.displayDate}</time>
       </header>
       <HTMLText text={props.article.text} />
     </article>
