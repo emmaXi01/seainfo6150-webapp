@@ -10,10 +10,11 @@ const ArticleTextToggleButton = (props) => {
     return (
         <button className={styles.button} onClick={handleClick}>{props.buttonText}</button>  
     );
-
 };
+
 ArticleTextToggleButton.propTypes = {
     onClick: PropTypes.func.isRequired,
     buttonText: PropTypes.string.isRequired
 }
+
 export default ArticleTextToggleButton;

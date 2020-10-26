@@ -35,4 +35,5 @@ const ArticleListItem = (props) => {
 ArticleListItem.propTypes = {
   article: PropTypes.object.isRequired
 };
+
 export default ArticleListItem;
