@@ -5,10 +5,16 @@ import styles from "./ArticleListItem.module.css";
 
 const ArticleListItem = (props) => {
   const [showDetails, setShowDetails] = useState(false);
+  const [buttonText, setButtonText] = useState("Show more");
 
-  const toggleContent = () => {
+  const onClick = () => {
     setShowDetails(!showDetails);
-  }
+    if(!showDetails) {
+      setButtonText("Show less");
+    } else {
+      setButtonText("Show more");
+    }
+  };
 
   return (
     <li className={styles.item}>
@@ -21,12 +27,12 @@ const ArticleListItem = (props) => {
           </div>
         } 
       </article>
-      <ArticleTextToggleButton toggleContent={toggleContent}/>
+      <ArticleTextToggleButton onClick={onClick} buttonText={buttonText}/>
     </li>
   );
 };
 
 ArticleListItem.propTypes = {
-  article: PropTypes.object.isRequired,
+  article: PropTypes.object.isRequired
 };
 export default ArticleListItem;

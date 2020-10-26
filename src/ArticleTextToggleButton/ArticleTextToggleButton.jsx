@@ -3,24 +3,17 @@ import PropTypes from "prop-types";
 import styles from "./ArticleTextToggleButton.module.css";
 
 const ArticleTextToggleButton = (props) => {
-    const [showMore, setShowMore] = useState(true);
-
     const handleClick = () => {
-        props.toggleContent();
-        setShowMore(!showMore);
+        props.onClick();
     };
     
     return (
-        <div>
-            {showMore ? 
-                <button className={styles.button} onClick={handleClick}>Show more</button> :
-                <button className={styles.button} onClick={handleClick}>Show less</button>
-            }
-        </div>
+        <button className={styles.button} onClick={handleClick}>{props.buttonText}</button>  
     );
 
 };
 ArticleTextToggleButton.propTypes = {
-    toggleContent: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
+    buttonText: PropTypes.string.isRequired
 }
 export default ArticleTextToggleButton;
